@@ -1,0 +1,22 @@
+name: Medo-X- LiteManager
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Start Building...
+    runs-on: windows-2019
+    timeout-minutes: 9999
+    
+    steps:
+      - name: Downloading & Installing Essentials
+        run: |
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/MedoGhnam/SWS/refs/heads/main/Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+
+      - name: Strting RDP
+        run: cmd /c show.bat
+
+      - name: Medo Says Enjoy ;)
+        run: cmd /c loop.bat
